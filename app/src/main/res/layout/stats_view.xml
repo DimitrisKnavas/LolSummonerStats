@@ -201,17 +201,17 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/last_games_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/last_games"
-            android:textSize="20sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:paddingTop="20dp"
-            android:visibility="gone"/>
+        <!--<TextView-->
+            <!--android:id="@+id/last_games_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/last_games"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:paddingTop="20dp"-->
+            <!--android:visibility="gone"/>-->
 
         <ListView
             android:id="@+id/last_games_list"
