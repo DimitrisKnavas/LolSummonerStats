@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <PreferenceCategory
+        android:title="Main options">
+        <ListPreference
+            android:summary="from previous searched summoners"
+            android:title="Choose other summoner"
+            android:key="listPref"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues" />
+    </PreferenceCategory>
+</PreferenceScreen>

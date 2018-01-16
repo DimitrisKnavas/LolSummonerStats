@@ -1,26 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/progress_container"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal|center_vertical"
-    android:gravity="center_horizontal|center_vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="@android:style/Widget.Holo.ProgressBar.Large"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/progress_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal|center_vertical">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@android:style/Widget.Holo.ProgressBar.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity = "center_horizontal|center_vertical"/>
+
+        <TextView
+            android:id="@+id/search_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity = "center_horizontal|center_vertical"
+            android:text="@string/searching_summoner"/>
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/summoner_data_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity = "center_horizontal|center_vertical"/>
+        android:orientation="vertical"
+        android:visibility="gone">
 
-    <TextView
-        android:id="@+id/search_status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity = "center_horizontal|center_vertical"
-        android:text="Loading ..."/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:background="#dddddd"
+            android:orientation="horizontal"
+            android:layout_weight="0">
+
+            <ImageView
+                android:id="@+id/summoner_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:paddingRight="16dp"
+                android:maxHeight="30dp"
+                android:contentDescription="Summoner icon"
+                android:paddingEnd="16dp" />
+
+            <TextView
+                android:id="@+id/summoner_name_text_view"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical|start"
+                android:paddingRight="16dp"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/summoner_level_text_view"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical|end"
+                android:visibility="gone"
+                android:textSize="15dp"
+                android:textColor="#444444"
+                android:layout_weight="0"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/leaguesTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:orientation="horizontal"
+            android:background="#f0f0f0">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/solo5v5Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/solo5x5"
+                    android:layout_height="match_parent"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical|center"
+                    android:text="Ranked Solo Duo"
+                    android:textColor="#000000"
+                    android:paddingEnd="5dp" />
+
+                <TextView
+                    android:id="@+id/RANKED_SOLO_5x5"
+                    android:layout_height="match_parent"
+                    android:paddingRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="_"
+                    android:gravity="center_vertical|center"
+                    android:textColor="#666666"
+                    android:paddingEnd="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/flex5v5Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/flex5v5"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical|center"
+                    android:text="Ranked Flex 5v5"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/RANKED_FLEX_SR"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:text="_"
+                    android:gravity="center_vertical|center"
+                    android:textColor="#666666"/>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/flex3v3Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/flex3v3"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical|center"
+                    android:text="Ranked Flex 3v3"
+                    android:textColor="#000000"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/RANKED_FLEX_TT"
+                    android:paddingLeft="5dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:text="_"
+                    android:gravity="center_vertical|center"
+                    android:textColor="#666666"
+                    android:paddingStart="5dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/last_games_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_games"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:visibility="gone"/>
+
+        <ListView
+            android:id="@+id/last_games_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+    </LinearLayout>
 
 </LinearLayout>

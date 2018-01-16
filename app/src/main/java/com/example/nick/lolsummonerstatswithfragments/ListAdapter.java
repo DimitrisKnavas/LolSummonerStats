@@ -38,13 +38,14 @@ public class ListAdapter extends ArrayAdapter<SummonerGameStats> {
 
         SummonerGameStats p = getItem(position);
 
+
         if(p != null)
         {
             TextView winOrLoseTextview = (TextView) v.findViewById(R.id .win_or_lose);
             TextView scoreTextview = (TextView) v.findViewById(R.id.score);
             TextView creepScoreTextview = (TextView) v.findViewById(R.id.creep_score);
             TextView goldTextview = (TextView) v.findViewById(R.id.gold);
-            TextView champTextview = (TextView) v.findViewById(R.id.champ_name);
+            //TextView champTextview = (TextView) v.findViewById(R.id.champ_name);
 
             //GetChampionNameFromId getChampionNameFromId = new GetChampionNameFromId(v.getContext(),p,searchedSummoner);
             //getChampionNameFromId.execute(champTextview);

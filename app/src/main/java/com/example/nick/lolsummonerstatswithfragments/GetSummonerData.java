@@ -1,21 +1,19 @@
 package com.example.nick.lolsummonerstatswithfragments;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +22,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.zip.Inflater;
+
 
 public class GetSummonerData extends AsyncTask<String,Integer,Summoner>{
 
@@ -39,34 +37,41 @@ public class GetSummonerData extends AsyncTask<String,Integer,Summoner>{
     private Summoner searchedSummoner;
     private int response_code;
     private String apiKey = BuildConfig.LEAGUE_OF_LEGENDS_API_KEY;
+    private TextView summName,summLevel,rankedFlexSR,rankedFlexTT,rankedSolo;
 
 
 
-    public GetSummonerData(Context context,View rootView, Summoner searchedSummoner)
+    public GetSummonerData(Context context,View rootView, Summoner searchedSummoner, ArrayList<SummonerGameStats> summonerGameStatsArrayList)
     {
         this.context = context;
         this.searchedSummoner = searchedSummoner;
         this.rootView = rootView;
+        this.summonerGameStatsArrayList = summonerGameStatsArrayList;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        summName = rootView.findViewById(R.id.summoner_name_text_view);
+        summLevel = rootView.findViewById(R.id.summoner_level_text_view);
+        rankedFlexSR = rootView.findViewById(R.id.RANKED_FLEX_SR);
+        rankedFlexTT = rootView.findViewById(R.id.RANKED_FLEX_TT);
+        rankedSolo = rootView.findViewById(R.id.RANKED_SOLO_5x5);
     }
 
     protected Summoner doInBackground(String... strings) {
 
-        status = (TextView) rootView.findViewById(R.id.search_status);
+
 
         URL url;
         region = strings[1];
         try {
             //////////////////////////////// GET SUMMONER DATA
 
-            status.setText(R.string.searching_summoner);
             url = new URL("https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + strings[0] + "?api_key=" + apiKey);
             conn = (HttpURLConnection) url.openConnection();
             response_code = conn.getResponseCode();
+            Log.i("Response code",String.valueOf(response_code));
             if (response_code == HttpURLConnection.HTTP_OK) {
                 InputStream input = conn.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -114,7 +119,12 @@ public class GetSummonerData extends AsyncTask<String,Integer,Summoner>{
                     if(queue.equals("RANKED_FLEX_TT")) ranked_flex_tt = value;
                 }
             }
+
+
+
             conn.disconnect();
+
+
 
             //////////////////////////////// GET LAST GAMES
 
@@ -156,7 +166,6 @@ public class GetSummonerData extends AsyncTask<String,Integer,Summoner>{
 
             summonerGameStatsArrayList = new ArrayList<>();
             for(int i=0; i < gamesList.size(); i++) {
-                onProgressUpdate();
                 url = new URL("https://" + searchedSummoner.getRegion() + ".api.riotgames.com/lol/match/v3/matches/" + gamesList.get(i).getGameId() + "?api_key=" + apiKey);
                 conn = (HttpURLConnection) url.openConnection();
                 response_code = conn.getResponseCode();
@@ -215,10 +224,22 @@ public class GetSummonerData extends AsyncTask<String,Integer,Summoner>{
     @Override
     protected void onPostExecute(Summoner summoner) {
         super.onPostExecute(summoner);
+        ListAdapter customAdapter = new ListAdapter(rootView.getContext(),R.layout.last_matches_list_item,summonerGameStatsArrayList,searchedSummoner);
+        ListView listView = rootView.findViewById(R.id.last_games_list);
+
+
+        summName.setText(searchedSummoner.getName());
+        summLevel.setText(String.valueOf(searchedSummoner.getSummonerLevel()));
+        rankedFlexSR.setText(ranked_flex_sr);
+        rankedFlexTT.setText(ranked_flex_tt);
+        rankedSolo.setText(ranked_solo_5v5);
+
+
+
+        listView.setAdapter(customAdapter);
+        rootView.findViewById(R.id.progress_container).setVisibility(View.GONE);
+        rootView.findViewById(R.id.last_games_list).setVisibility(View.VISIBLE);
+        rootView.findViewById(R.id.summoner_data_container).setVisibility(View.VISIBLE);
     }
 
-    public Summoner getTheSummoner()
-    {
-        return searchedSummoner;
-    }
 }
