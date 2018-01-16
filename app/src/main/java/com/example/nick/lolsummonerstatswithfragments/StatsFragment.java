@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,6 @@ public class StatsFragment extends Fragment {
 
 
 
-        Log.i("test","test");
         rootView = inflater.inflate(R.layout.stats_view, container, false);
         selectedName = getArguments().getString("selectedName");
         selectedServer = getArguments().getString("selectedServer");

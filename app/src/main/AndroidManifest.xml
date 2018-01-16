@@ -24,6 +24,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".SettingsActivity" android:parentActivityName=".DisplaySummonerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplaySummonerActivity" />
+        </activity>
         <provider
             android:authorities="com.example.nick.lolsummonerstatswithfragments"
             android:name=".data.StatsProvider"

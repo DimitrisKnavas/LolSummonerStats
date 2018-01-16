@@ -3,5 +3,6 @@
     <string name="search_summoner">Search summoner</string>
     <string name="searching_summoner">Searching summoner data …</string>
     <string name="get_game_data">Searching game data …</string>
-    <string name="last_games">last games</string>
+    <string name="last_games">Last games</string>
+    <string name="settings">Settings</string>
 </resources>
