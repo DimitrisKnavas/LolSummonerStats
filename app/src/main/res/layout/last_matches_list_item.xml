@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:visibility="gone"
+    android:id="@+id/game_list_item">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/win_or_lose"
+        android:text="Game result"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center"
+        android:width="0dp"
+        android:layout_weight=".15"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center"
+        android:id="@+id/champ_name"
+        android:layout_weight=".15"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:width="0dp"
+        android:layout_weight=".30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:id="@+id/score"
+            android:text="score"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="creeps"
+            android:id="@+id/creep_score"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="left"
+        android:text="gold"
+        android:id="@+id/gold"
+        android:paddingRight="20dp"
+        android:width="0dp"
+        android:layout_weight=".40"/>
+
+
+</LinearLayout>
