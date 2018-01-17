@@ -2,30 +2,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal|center_vertical"
-    android:gravity="center_horizontal|center_vertical">
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/summonerNameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Summoner Name" />
-
-    <Spinner
-        android:id="@+id/serverSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_height="wrap_content"
+    <ImageView
         android:layout_width="wrap_content"
-        android:text="@string/search_summoner" />
+        android:layout_height="190dp"
+        android:layout_weight="0"
+        android:src="@drawable/lol_logo_rgb_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:minHeight="100dp">
+
+        <EditText
+            android:id="@+id/summonerNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Summoner Name" />
+
+        <Spinner
+            android:id="@+id/serverSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/search_summoner" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -5,4 +5,51 @@
     <string name="get_game_data">Searching game data …</string>
     <string name="last_games">Last games</string>
     <string name="settings">Settings</string>
+    <string name="summoner_not_found">Summoner not found</string>
+    <string name="refresh">Refresh</string>
+    <string name="pref_name_label">Change Summoner</string>
+    <string name="pref_name_key" translatable="false">name</string>
+    <string name="pref_name_default" translatable="false"></string>
+
+    <string name="pref_server_label">Select server</string>
+    <string name="pref_server_key" translatable="false">server</string>
+    <string name="pref_server_russia" translatable="false">ru</string>
+    <string name="pref_server_korea" translatable="false">kr</string>
+    <string name="pref_server_brazil" translatable="false">br1</string>
+    <string name="pref_server_oceania" translatable="false">oc1</string>
+    <string name="pref_server_japan" translatable="false">jp1</string>
+    <string name="pref_server_northAmerica" translatable="false">na1</string>
+    <string name="pref_server_europeNE" translatable="false">eun1</string>
+    <string name="pref_server_europeW" translatable="false">euw1</string>
+    <string name="pref_server_turkey" translatable="false">tr</string>
+    <string name="pref_server_southAmericaN" translatable="false">la1</string>
+    <string name="pref_server_southAmericaS" translatable="false">la2</string>
+
+    <string-array name="pref_server_entries">
+        <item>Russia</item>
+        <item>Korea</item>
+        <item>Brazil</item>
+        <item>Oceania</item>
+        <item>Japan</item>
+        <item>North America</item>
+        <item>Europe Nordic East</item>
+        <item>Europe West</item>
+        <item>Turkey</item>
+        <item>South America North</item>
+        <item>South America South</item>
+    </string-array>
+
+    <string-array name="pref_server_entryValues">
+        <item>ru</item>
+        <item>kr</item>
+        <item>br1</item>
+        <item>oc1</item>
+        <item>jp1</item>
+        <item>na1</item>
+        <item>eun1</item>
+        <item>euw1</item>
+        <item>tr</item>
+        <item>la1</item>
+        <item>la2</item>
+    </string-array>
 </resources>

@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,6 +30,16 @@
             android:text="@string/searching_summoner"/>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/summoner_not_found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity = "center_horizontal|center_vertical"
+        android:text="@string/summoner_not_found"
+        android:visibility="gone"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/summoner_data_container"
@@ -65,7 +75,6 @@
                 android:layout_width="wrap_content"
                 android:gravity="center_vertical|start"
                 android:paddingRight="16dp"
-                android:visibility="gone"
                 android:layout_weight="1"
                 android:textColor="#000000"
                 android:textSize="25sp"/>
@@ -75,7 +84,6 @@
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:gravity="center_vertical|end"
-                android:visibility="gone"
                 android:textSize="15dp"
                 android:textColor="#444444"
                 android:layout_weight="0"/>

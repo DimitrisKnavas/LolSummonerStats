@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         serverOptions = findViewById(R.id.serverSpinner);
         searchNameText = findViewById(R.id.summonerNameText);
         searchButton = findViewById(R.id.searchButton);

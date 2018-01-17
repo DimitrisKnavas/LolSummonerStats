@@ -4,8 +4,6 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +23,7 @@ public class StatsFragment extends Fragment {
     private ArrayList<SummonerGameStats> lastGames;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,19 +35,14 @@ public class StatsFragment extends Fragment {
         selectedServer = getArguments().getString("selectedServer");
         status = (TextView) rootView.findViewById(R.id.search_status);
 
-        searchSummoner();
-
-
-
-
-
         return rootView;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onStart() {
         super.onStart();
-
+        searchSummoner();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
