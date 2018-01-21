@@ -5,7 +5,7 @@
     <string name="get_game_data">Searching game data …</string>
     <string name="last_games">Last games</string>
     <string name="settings">Settings</string>
-    <string name="summoner_not_found">Summoner not found :(</string>
+    <string name="summoner_not_found">:(  Summoner not found</string>
     <string name="refresh">Refresh</string>
     <string name="pref_name_label">Change Summoner</string>
     <string name="pref_name_key" translatable="false">name</string>
