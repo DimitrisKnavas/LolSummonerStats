@@ -42,6 +42,7 @@ public class DisplayImage extends AsyncTask<String,String,Bitmap>{
         try {
             InputStream in = new java.net.URL(strings[0]).openStream();
             icon = BitmapFactory.decodeStream(in);
+            in.close();
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
             e.printStackTrace();

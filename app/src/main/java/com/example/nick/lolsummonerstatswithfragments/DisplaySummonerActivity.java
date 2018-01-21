@@ -120,7 +120,7 @@ public class DisplaySummonerActivity extends AppCompatActivity {
         }
     }
 
-    private void updateStats() {
+    public void updateStats() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String name = prefs.getString(getString(R.string.pref_name_key), getString(R.string.pref_name_default));
         String selectedServer = prefs.getString(getString(R.string.pref_server_key),getString(R.string.pref_server_northAmerica));

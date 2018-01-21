@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:paddingLeft="32dp"
-    android:paddingRight="32dp"
-    android:visibility="gone"
     android:id="@+id/game_list_item">
 
 
@@ -18,55 +15,42 @@
         android:text="Game result"
         android:layout_gravity="center_vertical|center_horizontal"
         android:gravity="center"
+        android:paddingLeft="20dp"
         android:width="0dp"
         android:layout_weight=".20"/>
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_gravity="center_vertical|center_horizontal"-->
-        <!--android:gravity="center"-->
-        <!--android:id="@+id/champ_name"-->
-        <!--android:layout_weight=".15"/>-->
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingRight="10dp"
+        android:id="@+id/score"
+        android:text="score"
         android:width="0dp"
-        android:layout_weight=".30">
+        android:layout_weight=".30"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:id="@+id/score"
-            android:text="score"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="creeps"
-            android:id="@+id/creep_score"/>
-
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="creeps"
+        android:id="@+id/creep_score"
+        android:width="0dp"
+        android:layout_weight=".20"/>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:gravity="left"
+        android:gravity="center"
         android:text="gold"
         android:id="@+id/gold"
         android:paddingRight="20dp"
         android:width="0dp"
-        android:layout_weight=".50"/>
+        android:layout_weight=".30"/>
 
 
 </LinearLayout>

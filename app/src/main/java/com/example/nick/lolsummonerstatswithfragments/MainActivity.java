@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(serverOptions.getSelectedItemPosition() != 0)
                 {
-                    String selectedServer=null;
+                    String selectedServer = null;
                     String[] mProjection =
                             {
                                     LoLStatsContract.ServerEntry.COLUMN_SERVER_ID

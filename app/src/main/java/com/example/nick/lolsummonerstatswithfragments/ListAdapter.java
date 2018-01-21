@@ -1,5 +1,6 @@
 package com.example.nick.lolsummonerstatswithfragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -13,18 +14,15 @@ import java.util.ArrayList;
 
 public class ListAdapter extends ArrayAdapter<SummonerGameStats> {
 
-    private Summoner searchedSummoner;
+    private ArrayList<SummonerGameStats> games;
 
-    public ListAdapter(Context context, int textViewResourceId){
-        super(context, textViewResourceId);
-    }
-
-    public ListAdapter(Context context, int resource, ArrayList<SummonerGameStats> items, Summoner searchedSummoner)
+    public ListAdapter(Context context, int resource, ArrayList<SummonerGameStats> items)
     {
         super(context, resource, items);
-        this.searchedSummoner = searchedSummoner;
+        this.games = items;
     }
 
+    @SuppressLint("SetTextI18n")
     public View getView(int position, View convertView, ViewGroup parent)
     {
         View v = convertView;
@@ -36,7 +34,7 @@ public class ListAdapter extends ArrayAdapter<SummonerGameStats> {
             v = vi.inflate(R.layout.last_matches_list_item,null);
         }
 
-        SummonerGameStats p = getItem(position);
+        SummonerGameStats p = games.get(position);
 
 
         if(p != null)
@@ -66,23 +64,23 @@ public class ListAdapter extends ArrayAdapter<SummonerGameStats> {
 
             if(scoreTextview != null)
             {
-                DisplayImage displayScoreImage = new DisplayImage(scoreTextview);
-                displayScoreImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png");
+                //DisplayImage displayScoreImage = new DisplayImage(scoreTextview);
+                //displayScoreImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png");
                 scoreTextview.setText(String.valueOf(p.getKills()) + " / " + String.valueOf(p.getDeaths())
                         + " / " + String.valueOf(p.getAssists()));
             }
 
             if(creepScoreTextview != null)
             {
-                DisplayImage displayScoreImage = new DisplayImage(creepScoreTextview);
-                displayScoreImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/minion.png");
+                //DisplayImage displayScoreImage = new DisplayImage(creepScoreTextview);
+                //displayScoreImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/minion.png");
                 creepScoreTextview.setText(String.valueOf(p.getTotalMinionsKilled()));
             }
 
             if(goldTextview != null)
             {
-                DisplayImage displayGoldImage = new DisplayImage(goldTextview,v);
-                displayGoldImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png");
+                //DisplayImage displayGoldImage = new DisplayImage(goldTextview,v);
+                //displayGoldImage.execute("http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png");
                 goldTextview.setText(String.valueOf(p.getGoldEarned()));
             }
         }

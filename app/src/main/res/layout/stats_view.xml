@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity = "center_horizontal|center_vertical"
+            android:textAlignment="center"
             android:text="@string/searching_summoner"/>
 
     </LinearLayout>
@@ -209,6 +210,59 @@
 
         </LinearLayout>
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/list_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:orientation="horizontal"
+            android:background="#cbcbcb">
+
+
+            <TextView
+                android:id="@+id/W_L"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:text="W / L"
+                android:layout_weight="0.20"
+                android:gravity="center_vertical|center_horizontal"
+                android:contentDescription="Win or lose"
+                android:paddingLeft="20dp" />
+
+            <ImageView
+                android:id="@+id/score_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.30"
+                android:maxHeight="10dp"
+                android:contentDescription="Score" />
+
+            <ImageView
+                android:id="@+id/creeps_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.20"
+                android:maxHeight="10dp"
+                android:contentDescription="Minions" />
+
+            <ImageView
+                android:id="@+id/gold_icon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center"
+                android:layout_weight="0.30"
+                android:paddingRight="20dp"
+                android:maxHeight="10dp"
+                android:contentDescription="Gold" />
+
+
+        </LinearLayout>
+
         <!--<TextView-->
             <!--android:id="@+id/last_games_text"-->
             <!--android:layout_width="wrap_content"-->
@@ -228,5 +282,8 @@
         </ListView>
 
     </LinearLayout>
+
+
+
 
 </LinearLayout>
