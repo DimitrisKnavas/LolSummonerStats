@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/LolSummonerStats.iml" filepath="$PROJECT_DIR$/LolSummonerStats.iml" />
       <module fileurl="file://C:\Users\nicka\AndroidStudioProjects\LolSummonerStatsWithFragments2\LolSummonerStatsWithFragments.iml" filepath="C:\Users\nicka\AndroidStudioProjects\LolSummonerStatsWithFragments2\LolSummonerStatsWithFragments.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LolSummonerStatsWithFragments2.iml" filepath="$PROJECT_DIR$/LolSummonerStatsWithFragments2.iml" />
+      <module fileurl="file://G:\AndroidStudioProjects\LolSummonerStats\LolSummonerStatsWithFragments2.iml" filepath="G:\AndroidStudioProjects\LolSummonerStats\LolSummonerStatsWithFragments2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

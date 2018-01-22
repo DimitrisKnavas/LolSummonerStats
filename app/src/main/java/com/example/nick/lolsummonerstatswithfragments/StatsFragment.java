@@ -122,7 +122,7 @@ public class StatsFragment extends Fragment {
             try {
                 //////////////////////////////// GET SUMMONER DATA
 
-                onProgressUpdate("Loading summoner data ...");
+                //onProgressUpdate("Loading summoner data ...");
                 url = new URL("https://" + selectedServer + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + selectedName + "?api_key=" + apiKey);
                 conn = (HttpURLConnection) url.openConnection();
                 response_code = conn.getResponseCode();
@@ -153,7 +153,7 @@ public class StatsFragment extends Fragment {
                 else {
                     //////////////////////////////// GET LEAGUE DATA
 
-                    onProgressUpdate("Loading league info ...");
+                    //onProgressUpdate("Loading league info ...");
                     url = new URL("https://" + searchedSummoner.getRegion() + ".api.riotgames.com/lol/league/v3/positions/by-summoner/" + String.valueOf(searchedSummoner.getId()) + "?api_key=" + apiKey);
                     conn = (HttpURLConnection) url.openConnection();
                     response_code = conn.getResponseCode();
@@ -184,7 +184,7 @@ public class StatsFragment extends Fragment {
 
                     //////////////////////////////// GET LAST GAMES
 
-                    onProgressUpdate("Loading last games ...");
+                    //onProgressUpdate("Loading last games ...");
                     url = new URL("https://" + searchedSummoner.getRegion() + ".api.riotgames.com/lol/match/v3/matchlists/by-account/" + String.valueOf(searchedSummoner.getAccountId()) + "/recent?api_key=" + apiKey);
                     conn = (HttpURLConnection) url.openConnection();
                     response_code = conn.getResponseCode();
@@ -221,7 +221,7 @@ public class StatsFragment extends Fragment {
 
                     if(gamesList.size()>0)
                     {
-                        onProgressUpdate("Loading game data ...");
+                        //onProgressUpdate("Loading game data ...");
                         lastGames = new ArrayList<>();
                         for (int i = 0; i < gamesList.size(); i++) {
                             url = new URL("https://" + searchedSummoner.getRegion() + ".api.riotgames.com/lol/match/v3/matches/" + gamesList.get(i).getGameId() + "?api_key=" + apiKey);
@@ -274,7 +274,10 @@ public class StatsFragment extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             } finally {
-                conn.disconnect();
+                if(conn!=null){
+                    conn.disconnect();
+                }
+
             }
             return null;
         }
@@ -315,10 +318,14 @@ public class StatsFragment extends Fragment {
             rootView.findViewById(R.id.summoner_not_found).setVisibility(View.VISIBLE);
         }
 
+
+/*
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
             status.setText(values[0]);
         }
+        */
+
     }
 }
